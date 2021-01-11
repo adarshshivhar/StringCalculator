@@ -45,4 +45,23 @@ public class StringCalculatorTest {
 		StringCalculator cal = new StringCalculator();
 		assertEquals(3, cal.add("//;\n1;2"));
 	}
+	
+	@Test
+	public void testNegativeNumbers() {
+		StringCalculator cal = new StringCalculator();
+		
+		try {
+			cal.add("-1,2");
+		}
+		catch(IllegalArgumentException e) {
+			assertEquals(e.getMessage(), "Negatives not allowed: -1");
+		}
+		
+		try {
+			cal.add("2,-3,4,-5");
+		}
+		catch(IllegalArgumentException e) {
+			assertEquals(e.getMessage(), "Negatives not allowed: -3,-5");
+		}
+	}
 }
