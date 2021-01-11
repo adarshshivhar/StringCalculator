@@ -27,4 +27,10 @@ public class StringCalculatorTest {
 		assertEquals(3, cal.add("1,2"));
 		assertEquals(5, cal.add("2,3"));
 	}
+	
+	@Test
+	public void testThreeNumber() {
+		StringCalculator cal = new StringCalculator();
+		assertEquals(6, cal.add("1,2,3"));
+	}
 }
