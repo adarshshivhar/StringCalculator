@@ -20,4 +20,11 @@ public class StringCalculatorTest {
 		assertEquals(2, cal.add("2"));
 		assertEquals(3, cal.add("3"));
 	}
+	
+	@Test
+	public void testTwoNumber() {
+		StringCalculator cal = new StringCalculator();
+		assertEquals(3, cal.add("1,2"));
+		assertEquals(5, cal.add("2,3"));
+	}
 }

@@ -6,8 +6,18 @@ public class StringCalculator {
 		if(input.equals("")) {
 			return 0;
 		}else {
-			return Integer.parseInt(input);
+			int total = 0;
+			String[] numbers = input.split(",");
+			for(String s: numbers) {
+				total += stringToInteger(s);
+			}
+			
+			return total;
 		}
+	}
+
+	private int stringToInteger(String s) {
+		return Integer.parseInt(s);
 	}
 
 }
