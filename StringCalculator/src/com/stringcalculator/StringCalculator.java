@@ -7,7 +7,14 @@ public class StringCalculator {
 			return 0;
 		}else {
 			int total = 0;
-			String[] numbers = input.split(",|\n");
+			String delimiter = ",";
+			if(input.matches("//(.*)\n(.*)")) {
+				delimiter = Character.toString(input.charAt(2));
+				input = input.substring(4);
+			}
+			
+			String[] numbers = input.split(delimiter + "|\n");
+			
 			for(String s: numbers) {
 				total += stringToInteger(s);
 			}
