@@ -33,4 +33,10 @@ public class StringCalculatorTest {
 		StringCalculator cal = new StringCalculator();
 		assertEquals(6, cal.add("1,2,3"));
 	}
+	
+	@Test
+	public void testWithNewLine() {
+		StringCalculator cal = new StringCalculator();
+		assertEquals(6, cal.add("1\n2,3"));
+	}
 }
