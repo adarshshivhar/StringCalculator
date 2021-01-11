@@ -30,9 +30,9 @@ public class StringCalculator {
 					negativeString += ("," + number);
 				}
 			}
-			
-			total += stringToInteger(number);
-		
+			if(stringToInteger(number)<1000) {
+				total += stringToInteger(number);
+			}	
 		}
 		if(!negativeString.equals("")) {
 			throw new IllegalArgumentException("Negatives not allowed: " + negativeString);
